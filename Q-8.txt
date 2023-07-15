@@ -1,0 +1,32 @@
+Q8.What is hibernate caching?
+
+
+
+
+
+ANSWER:
+
+
+
+Hibernate caching is a mechanism that allows Hibernate to store frequently accessed data in memory to improve performance by reducing database round trips. It involves caching both the persistent objects and the query results, minimizing the need for repeated database queries and improving the response time of the application.
+
+Hibernate provides several levels of caching:
+
+1. First-Level Cache (Session Cache):
+   - The first-level cache, also known as the session cache or persistence context, is associated with a Hibernate Session. It is enabled by default and operates at the session level.
+   - When an entity is loaded or saved during a session, Hibernate keeps a copy of the object in the first-level cache. Subsequent requests for the same object within the same session are served from this cache, eliminating the need for additional database queries.
+   - The first-level cache is limited to the scope of the current session and is cleared when the session is closed or cleared explicitly.
+
+2. Second-Level Cache:
+   - The second-level cache is an optional cache that operates at the session factory level. It caches data shared across multiple sessions, providing a shared cache for the application.
+   - The second-level cache can store entities, collections, and query results. It helps reduce database round trips when the same data is accessed by multiple sessions or requests.
+   - Hibernate supports various second-level cache providers, such as Ehcache, Infinispan, or Hazelcast, which handle caching and provide additional features like expiration policies, eviction strategies, and distributed caching.
+
+3. Query Cache:
+   - The query cache is used to cache the results of queries executed by Hibernate. It reduces the processing overhead of executing the same query repeatedly and improves query response time.
+   - When a query is executed, Hibernate checks if the same query has been executed before and if the query and its parameters match a previous execution. If so, it retrieves the result from the query cache instead of executing the query again.
+   - The query cache can be enabled and configured separately from the second-level cache.
+
+Caching in Hibernate provides significant performance benefits by reducing database interactions and improving response times. However, caching introduces the challenge of maintaining data consistency between the cache and the database. Hibernate manages this by providing mechanisms for cache synchronization and invalidation, ensuring that the cached data remains consistent with the underlying database.
+
+It's important to consider the caching strategy and configuration based on the application's specific requirements, data volatility, and access patterns. Properly configuring and utilizing Hibernate caching can greatly improve the performance and scalability of applications that rely on Hibernate for data access.

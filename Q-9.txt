@@ -1,0 +1,32 @@
+Q9.What is the difference between first level cache and second level cache?
+
+
+
+
+ANSWER:
+
+
+
+The first-level cache and second-level cache are two distinct levels of caching provided by Hibernate to improve performance by reducing database round trips. Here are the key differences between them:
+
+1. Scope:
+   - First-Level Cache (Session Cache): The first-level cache is associated with a Hibernate Session. It is specific to the session and operates within its scope. Each session maintains its own first-level cache, and objects stored in the first-level cache are accessible only within that session.
+   - Second-Level Cache: The second-level cache operates at the session factory level and is shared among multiple sessions. It provides a shared cache for the application, allowing data to be stored and accessed across multiple sessions.
+
+2. Data Storage:
+   - First-Level Cache (Session Cache): The first-level cache stores individual objects (entities) that have been loaded or saved within the current session. It keeps a copy of the objects in memory, allowing subsequent access without additional database queries.
+   - Second-Level Cache: The second-level cache can store entities, collections, and query results. It caches data shared across multiple sessions, providing a common cache for the application. The second-level cache is more extensive and can store a larger set of data than the first-level cache.
+
+3. Lifespan:
+   - First-Level Cache (Session Cache): The first-level cache exists only for the duration of a single session. It is created when a session is opened and cleared when the session is closed or cleared explicitly. The first-level cache is short-lived and specific to a particular session.
+   - Second-Level Cache: The second-level cache persists beyond the lifespan of an individual session. It exists as long as the session factory is active and can be shared across multiple sessions. The second-level cache provides long-term caching for frequently accessed data.
+
+4. Cache Mechanism:
+   - First-Level Cache (Session Cache): The first-level cache operates at the object level. When an object is loaded or saved within a session, Hibernate keeps a copy of the object in the first-level cache. Subsequent requests for the same object within the session are served from this cache.
+   - Second-Level Cache: The second-level cache operates at the entity or collection level. It caches entire entities or collections, as well as query results. The second-level cache stores data that is commonly accessed by multiple sessions, reducing database queries for shared data.
+
+5. Configuration and Providers:
+   - First-Level Cache (Session Cache): The first-level cache is enabled by default in Hibernate. It is an integral part of the Hibernate session and does not require explicit configuration. The first-level cache is associated with the session and managed by Hibernate internally.
+   - Second-Level Cache: The second-level cache is an optional cache that needs to be explicitly configured in Hibernate. It requires additional configuration settings, such as cache providers like Ehcache, Infinispan, or Hazelcast. Hibernate provides integration with various second-level cache providers, allowing customization based on application requirements.
+
+In summary, the first-level cache is specific to a session and stores individual objects within that session. It has a short lifespan and is managed by Hibernate internally. The second-level cache operates at the session factory level, stores entities, collections, and query results, and is shared among multiple sessions. It has a longer lifespan and requires explicit configuration and integration with cache providers.

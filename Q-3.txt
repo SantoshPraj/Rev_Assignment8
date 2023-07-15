@@ -1,0 +1,28 @@
+Q3.What are some of the important interfaces of Hibernate framework?
+
+
+
+
+ANSWER:
+
+
+
+Hibernate framework provides several important interfaces that serve various purposes in the ORM (Object-Relational Mapping) process. Here are some of the key interfaces in Hibernate:
+
+1. SessionFactory: The SessionFactory interface is a thread-safe and immutable representation of the mapping between Java classes and database tables. It is responsible for creating Session objects and caching database connections. The SessionFactory is typically configured once at the application's startup and shared among multiple threads.
+
+2. Session: The Session interface represents a single unit of work and acts as a gateway to interact with the database. It provides methods to perform database CRUD operations, execute queries, manage transactions, and control the persistence context. A Session is obtained from a SessionFactory and represents a logical connection to the database.
+
+3. Transaction: The Transaction interface represents a unit of work that spans multiple database operations. It provides methods to begin, commit, or rollback a transaction. The Transaction interface is used to control the transactional behavior of Hibernate operations, ensuring data consistency and atomicity.
+
+4. Query: The Query interface is used to define and execute database queries in Hibernate. It provides methods for parameter binding, result set retrieval, pagination, and other query-related operations. The Query interface supports both HQL (Hibernate Query Language) and native SQL queries.
+
+5. Criteria: The Criteria interface provides a programmatic way to construct database queries using a fluent and type-safe API. It allows developers to define query criteria, filtering conditions, and sorting rules using Java methods and objects. Criteria queries provide a more type-safe alternative to HQL or native SQL queries.
+
+6. SessionFactoryBuilder: The SessionFactoryBuilder interface is used to create a SessionFactory. It provides methods for configuring Hibernate settings, mapping resources, and building the SessionFactory instance. The SessionFactoryBuilder allows fine-grained control over the configuration of Hibernate's ORM features.
+
+7. Configuration: The Configuration interface is used to configure Hibernate and provide metadata about persistent classes. It allows developers to specify various settings, such as database connection details, entity mappings, caching configurations, and more. The Configuration interface is used to build a SessionFactory.
+
+8. PersistentObject: The PersistentObject interface represents a persistent entity managed by Hibernate. It serves as the base interface for all persistent classes mapped with Hibernate. Persistent objects have their state managed by Hibernate and can be saved, updated, or deleted in the database using Hibernate operations.
+
+These interfaces, along with their related implementations and supporting classes, form the core components of the Hibernate framework. They provide a powerful and flexible API for performing ORM operations, executing queries, managing transactions, and interacting with the database in a Java application.

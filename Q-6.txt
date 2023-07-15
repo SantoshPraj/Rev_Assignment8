@@ -1,0 +1,28 @@
+Q6.What is HQL?
+
+
+
+
+ANWER:
+
+
+
+HQL stands for Hibernate Query Language. It is a powerful and object-oriented query language provided by the Hibernate framework. HQL is similar to SQL (Structured Query Language), but it operates on persistent objects and their relationships instead of database tables and columns.
+
+Here are the key aspects of HQL:
+
+1. Object-Oriented Querying: HQL allows developers to perform queries using object-oriented syntax, making it easier to work with domain objects and their associations. It abstracts away the complexities of SQL and provides a more natural and expressive way to retrieve and manipulate data from the database.
+
+2. Entity-Based Querying: HQL operates on entities, which are Java objects representing persistent entities mapped to database tables. Instead of writing SQL queries targeting specific database columns, HQL queries operate on properties and relationships defined in the mapped entities.
+
+3. Persistence Context Awareness: HQL queries are aware of the persistence context maintained by Hibernate's Session. The persistence context contains the objects currently associated with the session, allowing HQL queries to fetch and manipulate data within the context. This enables transparent object loading and automatic dirty checking during query execution.
+
+4. Syntax and Features: HQL syntax resembles SQL but introduces additional features and concepts specific to Hibernate. It supports various clauses such as SELECT, FROM, WHERE, GROUP BY, HAVING, and ORDER BY. HQL provides advanced capabilities like entity joins, subqueries, projections, aggregations, and polymorphic queries.
+
+5. Named Queries: HQL queries can be defined and named for reuse across the application. Named queries are typically defined in entity mappings or XML configuration files. They provide a way to encapsulate complex queries, enhance code modularity, and improve query maintenance.
+
+6. Parameter Binding: HQL supports parameter binding to enable dynamic query execution. Parameters can be named or positional and are bound to query placeholders. This allows for dynamic filtering and parameterized queries, reducing the risk of SQL injection vulnerabilities.
+
+7. Native SQL Integration: Although HQL is the preferred query language in Hibernate, it also provides support for executing native SQL queries when necessary. Native SQL queries can be mixed with HQL queries, giving developers flexibility in cases where complex or vendor-specific SQL statements are required.
+
+HQL is a powerful querying language provided by Hibernate, offering an object-oriented and expressive way to interact with the database. It simplifies the retrieval and manipulation of data, enhances code readability, and leverages Hibernate's underlying ORM features. HQL queries can be customized and optimized to fit specific application requirements while still benefiting from Hibernate's transparent persistence mechanisms.
